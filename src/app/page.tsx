@@ -1,11 +1,13 @@
-import { prisma } from "@/lib/db";
+import { useTRPC } from "@/trpc/client"
 
-const Page = async () => {
 
-  const users = await prisma.user.findMany()
+const Page = () => {
+  const trpc = useTRPC()
+  trpc.hello.queryOptions({ text: "from tRPC" })
+
   return (
     <div>
-      {JSON.stringify(users, null, 2)}
+      <h1>Welcome to Vibe</h1>
     </div>
   )
 }
