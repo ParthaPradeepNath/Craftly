@@ -1,9 +1,6 @@
-import { useTRPC } from "@/trpc/client"
 
 
 const Page = () => {
-  const trpc = useTRPC()
-  trpc.hello.queryOptions({ text: "from tRPC" })
 
   return (
     <div>
